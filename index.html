@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <script src="script.js"></script>
+
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #007BFF;
+            padding: 1rem;
+        }
+
+        header strong {
+            color: #ff69b4;
+            font-size: 3rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 1s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #addForm {
+            margin-top: 20px;
+        }
+
+        #item {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #555;
+        }
+
+        #submit {
+            background-color: #ff69b4;
+            color: #111;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        #submit:hover {
+            background-color: #ff1493;
+        }
+
+        #items {
+            background-color: #333;
+            border: 1px solid #555;
+            color: #ff69b4;
+            /* Added font color for the tasks list */
+        }
+
+        .text-success {
+            color: #ff1493;
+        }
+    </style>
+
+    <title>To Do List</title>
+</head>
+
+<body>
+    <header class="bg-success text-white p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <strong class="animate__animated animate__fadeInUp">ToDo List</strong>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-3">
+        <h2>Add Items</h2>
+
+        <label id="lblsuccess" class="text-success" style="display: none;"></label>
+
+        <form id="addForm">
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-7">
+                    <input type="text" onkeyup="toggleButton(this, 'submit')" class="form-control" id="item"
+                        placeholder="Enter a task">
+                </div>
+
+                <div class="col-lg-5 col-md-5 col-sm-5">
+                    <input type="submit" class="btn btn-dark" id="submit" value="Submit" disabled>
+                </div>
+            </div>
+        </form>
+
+        <h3 class="mt-4">Tasks</h3>
+
+        <ul class="list-group" id="items"></ul>
+    </div>
+</body>
+
+</html>
